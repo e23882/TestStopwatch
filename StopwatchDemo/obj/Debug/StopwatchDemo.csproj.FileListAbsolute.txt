@@ -4,3 +4,4 @@ C:\Users\108801\source\repos\StopwatchDemo\StopwatchDemo\bin\Debug\StopwatchDemo
 C:\Users\108801\source\repos\StopwatchDemo\StopwatchDemo\obj\Debug\StopwatchDemo.csproj.CoreCompileInputs.cache
 C:\Users\108801\source\repos\StopwatchDemo\StopwatchDemo\obj\Debug\StopwatchDemo.exe
 C:\Users\108801\source\repos\StopwatchDemo\StopwatchDemo\obj\Debug\StopwatchDemo.pdb
+C:\Users\108801\source\repos\StopwatchDemo\StopwatchDemo\obj\Debug\StopwatchDemo.csprojAssemblyReference.cache

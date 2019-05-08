@@ -22,14 +22,37 @@ namespace StopwatchDemo
         static void Main(string[] args)
         {
             bool isFirstTime = true;
+            bool recordIsAction = false;
             Program pg = new Program();
-            //模擬事件發生
+            //模擬事件發生 0:按下錄動作,5~10:觸發keycode
             while (true)
             {
                 Random rd = new Random();
                 var rdNum = rd.Next(0, 10);
-                //當亂數值>5觸發計時
-                if (rdNum > 5)
+                if (rdNum == 0)//亂數=0開始計算 第二次遇到結束計算(模擬按按鈕動作)
+                {
+                    //按下按鈕
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("record btn click");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    if (!recordIsAction)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("Recording...");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Stop Recording...");
+                        Console.WriteLine("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+
+
+                    recordIsAction = !recordIsAction;
+                }
+                else if (rdNum > 5 && recordIsAction)
                 {
                     //第一次觸發事件不取時間(沒有第零次到第一次經過的時間)
                     if (isFirstTime)
@@ -44,7 +67,7 @@ namespace StopwatchDemo
                         Console.WriteLine(pg.calTime());
                     }
                 }
-                Thread.Sleep(800);
+                Thread.Sleep(300);
             }
         }
         public long calTime()
